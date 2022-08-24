@@ -1,0 +1,11 @@
+version: '3'
+services:
+  golang:
+    image: golang:latest
+    working_dir: /workdir
+    tty: true
+    volumes:
+      - ./hello:/workdir/
+    ports:
+      - "3000:8080"
+    command: ["go", "run", "main.go"]
